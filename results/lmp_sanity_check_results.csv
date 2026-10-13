@@ -1,0 +1,5 @@
+Case,Original,Simplified,TFIDF_LMP,MiniLM_Cosine,MiniLM_LMP,XLMR_LMP
+Identical,The tenant must pay rent on time.,The tenant must pay rent on time.,9.32,1.0,9.32,8.95
+Identical,We store personal information in India.,We store personal information in India.,9.32,1.0,9.32,8.91
+Unrelated,The tenant must pay rent on time.,The Earth revolves around the Sun.,1.76,0.0338,1.0,8.55
+Unrelated,We store personal information in India.,The recipe requires two cups of flour.,1.0,-0.1198,1.0,8.72
