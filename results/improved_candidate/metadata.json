@@ -1,0 +1,25 @@
+{
+  "project": "LegalDelta-BERT",
+  "base_model": "xlm-roberta-base",
+  "seed": 42,
+  "max_length": 256,
+  "epochs_requested": 6,
+  "best_epoch": 6,
+  "learning_rate": 1e-05,
+  "batch_size": 8,
+  "ranking_loss_weight": 0.25,
+  "regression_loss": "SmoothL1",
+  "target_mean_train": 8.592105263157896,
+  "target_std_train": 1.381370076107515,
+  "train_size": 228,
+  "validation_size": 50,
+  "best_validation_metrics": {
+    "rmse": 0.7526295513731626,
+    "mae": 0.5760350653933867,
+    "pearson": 0.7572537388871733,
+    "spearman": 0.7398706981174429,
+    "prediction_mean": 8.975152170492592,
+    "prediction_std": 0.843541025530815
+  },
+  "test_evaluated": false
+}

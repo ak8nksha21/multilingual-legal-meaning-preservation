@@ -1,0 +1,5 @@
+case,original,simplified,expected_behavior,predicted_LMP_score
+Identical,The agreement starts on 1 January.,The agreement starts on 1 January.,Very high,9.207
+Minor paraphrase,The user must notify the company within 30 days.,The user is required to notify the company within 30 days.,Very high,9.233
+Negation reversal,The user may disclose confidential information.,The user may not disclose confidential information.,Lower,9.457
+Unrelated sentences,The tenant must pay rent by the fifth day of each month.,Photosynthesis converts light energy into chemical energy in plants.,Very low,8.401

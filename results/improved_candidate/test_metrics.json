@@ -1,0 +1,10 @@
+{
+  "test_size": 79,
+  "rmse": 0.9062215267970672,
+  "mae": 0.6597336757032177,
+  "pearson": 0.7283554457150372,
+  "spearman": 0.6489894925885573,
+  "prediction_mean": 9.124247550964355,
+  "prediction_std": 0.722238302230835,
+  "test_evaluated_once": true
+}
