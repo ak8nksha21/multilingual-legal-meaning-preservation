@@ -208,6 +208,7 @@ The project contains training code, reports, and saved evaluation artifacts.
 judgebert_lmp_submission/
 ├── README.md
 ├── notebooks/
+│   ├── LegalDelta_Full_Experiment_Pipeline.ipynb  # complete pipeline: baselines, source-disjoint split, v2 and final model, test evaluation
 │   └── LegalDelta_Improved_Model_Training.py
 ├── reports/
 │   ├── LegalDelta_Final_Results_Report.md
