@@ -158,6 +158,7 @@ Checkpoint: about 1.06 GB, stored outside Git
 
 - LegalDelta has the lowest error and the highest linear correlation
 - TF-IDF still ranks pairs slightly better (Spearman)
+- Reference point: always predicting the training mean (8.59) gives RMSE 1.29 and MAE 1.08
 - Validation result for the selected checkpoint: RMSE 0.753, Pearson 0.757
 
 *(Visual suggestion: grouped bar chart)*
@@ -174,8 +175,8 @@ Checkpoint: about 1.06 GB, stored outside Git
 | ToS / Privacy | 31 | 0.904 | 0.747 | 0.640 | 0.556 |
 
 - The model works in both languages with a single multilingual encoder
-- Hindi's lower error partly reflects its higher mean human score (9.24 vs 8.61 for English)
-- Subsets are small, so read these as indicative
+- **Caution:** the test set has only 3 source documents. All 38 Hindi pairs come from one Hindi rental agreement, and all 31 ToS pairs come from Netflix. Language and domain differences are therefore mixed up with document differences
+- Hindi's lower error also reflects its higher mean human score (9.24 vs 8.61 for English)
 
 ---
 
@@ -207,14 +208,12 @@ Train on one domain, test on the other (exploratory baseline experiment):
 
 # Error Analysis: Highest-Error Cases
 
-- Worst case: en_rental_057 (human score 4, predicted 7.27) omitted the security-deposit itemisation condition
-- Recurring error types in the top 15:
-  - Omitted conditions or purposes
-  - Omitted scope or authority
-  - Omitted retention periods and deadlines
-  - Permission or terminology changes
-- Direction: the model mostly **overestimates** preservation. It misses what was *dropped*
-- Cause: few low-score training examples (only 26 pairs score 6 or below)
+- Worst case: en_rental_057 (human score 4, predicted 7.27), where details of the security-deposit statement were simplified away
+- Typical errors in the 15 worst cases: omitted conditions, scope or details (e.g. "by any department or court" dropped from a Hindi rental clause), and changed facts (which IP address is used for tax)
+- **Predictions are compressed toward the middle:** prediction SD is 0.72 vs 1.25 for the human scores
+  - Pairs scored 7 or below (9 pairs): average human score 6.2, average prediction 7.9, so meaning loss is **overestimated as preserved**
+  - Pairs scored 10 (33 pairs): average prediction 9.55, so they are slightly underestimated
+- Cause: few low-score training examples (only 26 of 357 pairs score 6 or below; the test set has only 9 pairs scored 7 or below)
 
 ---
 
