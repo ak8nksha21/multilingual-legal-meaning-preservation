@@ -205,25 +205,29 @@ These are diagnostic examples, not formal aggregate metrics. They indicate that 
 The project contains training code, reports, and saved evaluation artifacts.
 
 ```text
-judgebert_lmp_submission/
+multilingual-legal-meaning-preservation/
 ├── README.md
+├── requirements.txt
 ├── notebooks/
-│   ├── LegalDelta_Full_Experiment_Pipeline.ipynb  # complete pipeline: baselines, source-disjoint split, v2 and final model, test evaluation
-│   └── LegalDelta_Improved_Model_Training.py
+│   ├── LegalDelta_Full_Experiment_Pipeline.ipynb   # full pipeline: baselines, source-disjoint split, model versions, test evaluation
+│   └── LegalDelta_Improved_Model_Training.py       # final model training script
 ├── reports/
 │   ├── LegalDelta_Final_Results_Report.md
 │   └── LegalDelta_Final_Results_Report.docx
 └── results/
-    └── improved_candidate/
+    ├── held_out_domain_results.csv                 # cross-domain experiment
+    └── improved_candidate/                         # final model
+        ├── metadata.json
+        ├── training_history.csv
         ├── test_metrics.json
         ├── test_predictions.csv
-        ├── language_metrics.json
-        ├── domain_metrics.json
-        ├── sanity_checks.json
-        └── ...
+        ├── language_wise_test_metrics.csv
+        ├── domain_wise_test_metrics.csv
+        ├── sanity_check_results.csv
+        └── 15_high_error_cases.csv
 ```
 
-The exact files under `results/improved_candidate/` depend on the artifacts included in the submitted repository. The full model checkpoint is stored separately in Google Drive rather than committed to Git.
+The full model checkpoint is stored separately in Google Drive rather than committed to Git.
 
 ## 10. Setup and Reproducibility
 
